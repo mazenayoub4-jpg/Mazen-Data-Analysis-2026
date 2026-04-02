@@ -20,7 +20,11 @@ I created custom measures to drive dynamic insights:
 - *Average Salary:* AVERAGE('data_science_salaries'[salary_in_usd])
 - *Salary Growth Logic:* Used conditional formatting to highlight YoY trends.
 
-- Total Jobs = COUNTROWS('data_science_salaries')
+- ## Total Jobs Count:
+```dax
+Total Jobs = COUNTROWS('data_science_salaries')
+```
 Median Salary USD = MEDIAN('data_science_salaries'[salary_in_usd])
-Median Salary USD = MEDIAN('data_science_salaries'[salary_in_usd])
+```
 Status Color = IF([Salary Growth %] > 0, "#00FF00", "#FF0000")
+```
