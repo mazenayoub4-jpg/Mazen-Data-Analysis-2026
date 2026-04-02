@@ -1,19 +1,26 @@
-In the rapidly evolving field of data science, understanding the trends and patterns in salaries is crucial for professionals and organizations alike. This dataset aims to shed light on the landscape of Data Science Salaries from 2020 to 2024. By analyzing salary data over this period, data enthusiasts, researchers, and industry professionals can gain valuable insights into salary trends, regional variations, and potential factors influencing compensation within the data science community.
+# Global Tech Salary Analysis (2020-2024) 📊
 
-Content
-The dataset encompasses a comprehensive collection of data science salary information, covering a span of five years from 2020 to 2024. The data includes various aspects related to salaries, providing a multifaceted view of compensation in the field.
+## 📋 Project Overview
+Understanding salary trends is crucial in the evolving data science field. This project analyzes Data Science salaries from 2020 to 2024 to provide insights into regional variations and compensation factors.
 
-Dataset Structure
-This dataset (data_science_salaries) covering from 2020 up to 2024 includes the following columns:
+## 🛠️ Tech Stack
+- *Tool:* Power BI Desktop
+- *Language:* DAX (Data Analysis Expressions)
+- *Data Source:* Kaggle (Data Science Salaries)
 
-Column Name	Description
-job_title	The job title or role associated with the reported salary.
-experience_level	The level of experience of the individual.
-employment_type	Indicates whether the employment is full-time, part-time, etc.
-work_models	Describes different working models (remote, on-site, hybrid).
-work_year	The specific year in which the salary information was recorded.
-employee_residence	The residence location of the employee.
-salary	The reported salary in the original currency.
-salary_currency	The currency in which the salary is denominated.
-salary_in_usd	The converted salary in US dollars.
-company_location	The geographic location of the employing organization.
+## 📂 Dataset Structure
+The dataset includes the following key features:
+- job_title: The specific role (e.g., Data Engineer).
+- experience_level: EN (Entry), MI (Mid), SE (Senior), EX (Executive).
+- salary_in_usd: Standardized salary for global comparison.
+- remote_ratio: Work model (Remote, Hybrid, On-site).
+
+## 💡 Key Insights & DAX Formulas
+I created custom measures to drive dynamic insights:
+- *Average Salary:* AVERAGE('data_science_salaries'[salary_in_usd])
+- *Salary Growth Logic:* Used conditional formatting to highlight YoY trends.
+
+- Total Jobs = COUNTROWS('data_science_salaries')
+Median Salary USD = MEDIAN('data_science_salaries'[salary_in_usd])
+Median Salary USD = MEDIAN('data_science_salaries'[salary_in_usd])
+Status Color = IF([Salary Growth %] > 0, "#00FF00", "#FF0000")
